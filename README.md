@@ -1,19 +1,6 @@
-** Update: 10/28/16. Added LazyAD Module version 1.0.2
-	* Fixes README typo.
-	* Added ReleaseNotes section inside of LazyAD.psd1 file (helpful for using "Publish-Module" to an internal repo)
-	* Removed default filtering on user group and ad group members. Added -Filter switch parameter to Get-ADGroupMemberLike and Get-ADUserLike
-	* TODO: Add comments, examples and -Filter switch to Get-ADComputerLike
+** If I have seen farther than others it is only because I have stood on the shoulders of giants. --Issac Newton
 
-
-** Update: 10/28/16. Added LazyAD Module version 1.0.1
-	* Adds function Get-ADComputerLike to the module.
-	* Still need to add comments...
-
-** Update: 10/4/16. Added LazyAD Module version 1.0.0
-*	Contains the functions: Get-ADGroupLike , Get-ADGroupMemberLike, Get-ADUserLike
-*	Comments and Examples to come
-
-** Initial Commit
-* This is the readme for my scripts repo. Please feel free to contact me with any questions!
-* Thanks!
-* How is an ocean solid?
+*  This Site contains my public Repos for various scripts and Gists that I work on
+*  All code here is my own, if I've "borrowed" something it will be there commentend where I was insirped!
+*  There should be a somewhat decent, not 100% horrible looking site at http://solidoceantrust.github.io .. ok it's bad. I'm learning markdown...sorry.
+*  Thanks for Stopping by the Repo
