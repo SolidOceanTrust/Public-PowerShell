@@ -7,9 +7,9 @@
    WMI and Manage-BDE to connect to the remote systems. An array of computers is accepted and only the
    computers that respond to pings will be tested.
 .EXAMPLE
-   Get-BitLockerStatus -ComputerName usw7bnabel
+   Get-BitLockerStatus -ComputerName pc1
 .EXAMPLE
-   Get-BitLockerStatus -ComputerName usw7bnabel,usw7mmuthusamy
+   Get-BitLockerStatus -ComputerName pc1,pc2,pc3
 #>
 function Get-BitLockerStatus {
     [CmdletBinding()]
@@ -37,7 +37,7 @@ Begin {
 }#begin
 
 Process {
-        
+
             foreach ($comp in $good)
             {
                 $BDEOutput = manage-bde -Computername $comp -status
@@ -56,16 +56,16 @@ Process {
                             'ProtectionStatus' = $BDEOutput[15].Split(":")[1].Trim()
                             'LockStatus' = $BDEOutput[16].Split(":")[1].Trim()
                             'KeyProtechtors' = (($BDEOutput[19..$BDEOutput.Length] -join ",").Replace(" ",""))
-                    
+
                             }#Properties
 
                         $Object = New-Object -TypeName psobject -Property $Properties
                         $Object = $Object | Select ComputerName,VolumeName,VolumeLetter,BitLockerStatus,BitLockerVersion,PercentEncrypted,EncryptionMethod,ProtectionStatus,LockStatus,KeyProtechtors
                         Write-Output $Object
                     }#If
-                else 
+                else
                 {
-                        # Computer has a multiple drives 
+                        # Computer has a multiple drives
                         $Properties = @{
                             'ComputerName'   = $($Comp)
                             'VolumeName' = $BDEOutput[8]
@@ -98,12 +98,12 @@ Process {
 
                         $Object = New-Object -TypeName psobject -Property $Properties
                         $Object = $Object | Select ComputerName,VolumeName,VolumeLetter,BitLockerStatus,BitLockerVersion,PercentEncrypted,EncryptionMethod,ProtectionStatus,LockStatus,KeyProtechtors
-                
+
                         Write-Output $Object
                     }#else
 
             }#foreach
-        
+
         }#Process
 
 End {
@@ -113,5 +113,3 @@ End {
 }#end
 
 }# Function
-
-bitlocker -ComputerName usw7bnabel,usw7mmuthusamy,usw7alam
