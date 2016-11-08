@@ -1,8 +1,9 @@
+
 <#PSScriptInfo
 
 .VERSION 1.0.0
 
-.GUID 1d5f75f7-ebc5-4115-b5c5-d5886a44e9b6
+.GUID a6f7f082-cc1d-40cd-b392-b99db0358993
 
 .AUTHOR Bnabel
 
@@ -16,7 +17,7 @@
 
 .PROJECTURI http://intranet/systems/BitLocker
 
-.ICONURI 
+.ICONURI http://intranet/systems/BitLocker/Icon.ico
 
 .EXTERNALMODULEDEPENDENCIES 
 
@@ -28,26 +29,14 @@
 Intial version uploaded. Single function. Added some aliaes
 
 #>
+
 <# 
 
 .DESCRIPTION 
  Checks BitLocker Configuration on local & remote systems 
 
 #> 
-<#
-.Synopsis
-   Get the status of BitLocker on a local or remote machine
-.DESCRIPTION
-   Get the status of BitLocker on a local or remote machine. If no computer name is supplied then
-   the localcomputer is used. You must have admin rights to use this cmdlet because it will use both
-   WMI and Manage-BDE to connect to the remote systems. An array of computers is accepted and only the
-   computers that respond to pings will be tested.
-.EXAMPLE
-   Get-BitLockerStatus -ComputerName pc1
-.EXAMPLE
-   Get-BitLockerStatus -ComputerName pc1,pc2,pc3
-#>
-function Get-BitLockerStatus {
+
     [CmdletBinding()]
     [Alias("gbs","bitlocker")]
     [OutputType([PSObject])]
@@ -147,5 +136,3 @@ End {
     Write-Verbose "All Done"
 
 }#end
-
-}# Function
