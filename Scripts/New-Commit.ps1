@@ -1,12 +1,12 @@
 ﻿<#
 .Synopsis
-   Gets BitLocker Recovery Key
+   
 .DESCRIPTION
-   Grabs the BitLocker Recovery key from AD. Accepts OU or computer name
+   
 .EXAMPLE
-   Get-BLKey -computer mypc
+   
 .EXAMPLE
-   Get-BLKey -ADSearchBase "OU=Computers,OU=Site,DC=Domain,DC=corp"
+   
 #>
 Function New-Commit
 {
