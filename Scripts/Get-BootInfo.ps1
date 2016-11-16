@@ -41,6 +41,7 @@
                   }#Properties
                   
                   $object = New-Object -TypeName psobject -Property $Properties
+                  $object = $object | Select-Object DateTime,ID,Cause,Message
                   Write-Output $object  
 
              }#Foreach
