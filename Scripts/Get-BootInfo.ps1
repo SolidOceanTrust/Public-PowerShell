@@ -23,9 +23,9 @@
                   $Cause = switch($record.ID)
                   {
                    # 6005 = BootUp
-            # 6006 = Graceful Shutdown
-            # 6009 = StartUp
-            # 1074 = Shutdown
+                # 6006 = Graceful Shutdown
+                # 6009 = StartUp
+                # 1074 = Shutdown
                     '6005' {"BootUp"}
                     '6006' {"Graceful Shutdown"}
                     '6009' {"StartUp"}

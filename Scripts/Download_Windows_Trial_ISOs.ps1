@@ -19,7 +19,7 @@ Invoke-WebRequest -UseBasicParsing -Uri $ISOUrl -OutFile D:\_ISO\Trial\Win2016St
 #Win2016Std
 $ISOUrl = 'http://care.dlservice.microsoft.com/dl/download/1/6/F/16FA20E6-4662-482A-920B-1A45CF5AAE3C/14393.0.160715-1616.RS1_RELEASE_SERVER_EVAL_X64FRE_EN-US.ISO'
 
-Invoke-WebRequest -UseBasicParsing -Uri $ISOUrl -OutFile D:\_ISO\Trial\Win2016Std\14393.0.160715-1616.RS1_RELEASE_SERVER_EVAL_X64FRE_EN-US.ISO
+Invoke-WebRequest -UseBasicParsing -Uri $ISOUrl -OutFile D:\_ISO\Trial\Server2016Std\14393.0.160715-1616.RS1_RELEASE_SERVER_EVAL_X64FRE_EN-US.ISO
 ####
 
 #Win10
