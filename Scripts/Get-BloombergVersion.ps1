@@ -13,7 +13,7 @@ Function Get-BloombergVerion
             [String[]]
             [Validateset("c","d","e","f")]
             [Alias("path","location")]
-            $InstallPath,
+            $InstallPath = "c",
 
             [bool] $list = $true
     )#Param
@@ -24,7 +24,7 @@ Function Get-BloombergVerion
             foreach($comp in $ComputerName)
             {
                 try {
-                    $BBergVersion = (Get-itemProperty -path \\$Comp\$($path)`$\Blp\Wintrv\Wintrv.exe -erroraction Stop).VersionInfo
+                    $BBergVersion = (Get-itemProperty -path \\$Comp\$($InstallPath)`$\Blp\Wintrv\Wintrv.exe -erroraction Stop).VersionInfo
                     if($list -eq $true)
                     {
                         Write-Output  $BBergVersion | Format-List

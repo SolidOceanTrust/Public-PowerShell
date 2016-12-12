@@ -26,7 +26,7 @@ http://bdn-ak.bloomberg.com/software/trv/upgr11082016.exe
 .DESCRIPTION
    Downloads Bloomberg Software from the pages, can choose between upgrade,update,new install
 .EXAMPLE
-   Download-BloombergVersions -version update -ReleaseDate recent -downloadpath c:\Software
+   Download-BloombergVersions -version update -version recent -downloadpath c:\Software
 .EXAMPLE
    Download-BloombergVersions -version "new install" -version 11/2016 -downloadpath c:\Software
 .INPUTS
@@ -50,37 +50,13 @@ http://bdn-ak.bloomberg.com/software/trv/upgr11082016.exe
     [Alias()]
     [OutputType([String])]
 Param(
-        # Version
-        [Parameter(Mandatory=$true, 
-                   ValueFromPipeline=$true,
-                   ValueFromPipelineByPropertyName=$true, 
-                   ValueFromRemainingArguments=$false, 
-                   Position=0)]
-        [ValidateNotNull()]
-        [ValidateNotNullOrEmpty()]
-        [ValidateSet("update", "upgrade", "new install")]
-        [Alias("ver")] 
-        [String]
-        $Version,
 
-        # Release Date
-        [Parameter(ValueFromPipeline=$true,
-                   ValueFromPipelineByPropertyName=$true, 
-                   ValueFromRemainingArguments=$false, 
-                   Position=1)]
-        [ValidateNotNull()]
-        [ValidateNotNullOrEmpty()]
-        [ValidateRange(1,12)]
-        [Alias("date","release")] 
-        [int]
-        $ReleaseMonth
 
       )#param
-
-$AppTypes = $Version
+$AppTypes = ("sotrt","bupd","upgr")
 $BuildYear = (Get-Date).Year
 #$BuildMonth = (Get-Date).Month
-$BuildMonth = (Get-Date $ReleaseMonth/1/$BuildYear).Month
+$BuildMonth = (Get-Date 11/1/2016).Month
 $BuildMonthName = (Get-Date 11/1/2016 -format MMM)
 #$BuildName = (Get-Date).Month
 $BuildName = $BuildMonth
