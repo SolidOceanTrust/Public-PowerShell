@@ -146,7 +146,6 @@ Is Datastore match $(Get-DataStore) & Does $Datastore have > 70GB free
 [D] - Is $OU match $(Get-ADOrganizationalUnit) & Does this $ou contain computer objects?
 
 
-$vcenterFQDN should Be USVC02.tcallc.local
 $VMName should be <15 chars, no " ", no special chars
 [D] - $CPU should be 1 or 2
 [D] - $RAMGB should be 4,8,12

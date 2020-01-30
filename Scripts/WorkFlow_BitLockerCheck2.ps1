@@ -11,7 +11,7 @@ workflow BitLockerConfigCheck {
 
         # Create
        #schtasks /Create /S $comp /TN BitLockerCheck /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass -file c:\BL.ps1" /SC Daily /RU SYSTEM /F
-       schtasks /Create /S $comp /TN BitLockerCheck /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass -file \\usw7bnabel\share\BL.ps1" /SC Daily /RU SYSTEM /F
+       schtasks /Create /S $comp /TN BitLockerCheck /TR "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass -file \\<desktop>\share\BL.ps1" /SC Daily /RU SYSTEM /F
 
         # Run
         schtasks /Run /TN BitLockerCheck /S $comp
@@ -37,7 +37,7 @@ workflow BitLockerConfigCheck {
             #Write-OutPut "Found the Text File!"
             $BLResult = Get-Content "\\$comp\c`$\bl.txt"
             #$properties = @{'ComputerName' = $comp ; 'BitLockerResult' = $BLResult}
-            Out-File -InputObject "$comp,$BLResult" -Append -FilePath "\\usw7bnabel\share\WorkFlowData.txt"
+            Out-File -InputObject "$comp,$BLResult" -Append -FilePath "\\<desktop>\share\WorkFlowData.txt"
             #$object = New-Object -TypeName psobject -Property $properties
             
             #Write-Output $properties
